@@ -5,6 +5,43 @@ import csv
 import json
 import spacy
 from datetime import datetime
+from supabase import create_client, Client
+from dotenv import load_dotenv
+import asyncio
+
+load_dotenv()
+
+# Define environment variables
+url = os.environ.get("SUPABASE_URL")
+key = os.environ.get("SUPABASE_KEY")
+
+# ... (rest of the code remains the same)
+
+# Create Supabase client
+supabase: Client = create_client(url, key)
+
+def convert_time_format(date_str, time_str):
+    """Convert 'MM/DD/YYYY' and '08:00 AM' to 'YYYY-MM-DD HH:MM:SS'"""
+    combined = f"{date_str} {time_str}"
+    return datetime.strptime(combined, "%m/%d/%Y %I:%M %p").strftime("%Y-%m-%d %H:%M:%S")
+
+def save_to_supabase(messages):
+    for msg in messages:
+        timestamp = convert_time_format(msg[0], msg[1])  # Convert date & time to timestamp
+
+        data = {
+            "date": msg[0],  # ADD date to match Supabase
+            "timestamp": timestamp,  # Correct column
+            "sender": msg[2],
+            "message": msg[3],
+            "labels": json.dumps(msg[4]),  # Convert list to JSON
+        }
+
+        try:
+            supabase_response = supabase.table("whatsapp_chat").insert(data).execute()
+            print("Inserted:", supabase_response)
+        except Exception as e:
+            print("Supabase Insert Error:", e)
 
 # Dictionary mapping labels to their respective abbreviations
 label_to_id = {
@@ -126,6 +163,11 @@ if __name__ == "__main__":
         nlp = spacy.load("en_core_web_sm")
         chat_messages = read_whatsapp_chat(extracted_txt)
         filtered_messages = extract_relevant_messages(chat_messages, nlp)
+
+        # Save messages to Supabase
+        save_to_supabase(filtered_messages)
+
+        print("Messages saved to Supabase.")
 
         csv_file = "chat_output.csv"
         save_to_csv(filtered_messages, csv_file)
