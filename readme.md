@@ -28,7 +28,7 @@ QuickRemind is an **AI-powered, privacy-first reminder tool** that **automatical
 - 💻 **Electron.js / Tauri** – Cross-platform desktop app.  
 
 ### **Integrations (Future Roadmap)**  
-- 🔗 **WhatsApp / Telegram / Email APIs** (for auto-scanning messages).  
+- 🔗 **WhatsApp / Telegram / Email email APIs** (for auto-scanning messages).  
 - 📅 **Google Calendar, Notion, Trello Sync** (for productivity enthusiasts).  
 
 ---
