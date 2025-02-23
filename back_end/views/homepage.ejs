@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Upload a File</h1>
+    <% if (error && error.length > 0) { %>
+        <div style="color: red;"><%= error %></div>
+    <% } %>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <h1>Delete All Uploads</h1>
+    <form action="/delete-uploads" method="post">
+        <button type="submit">Delete All Uploads</button>
+    </form>
+
+    <h1>Uploaded Files</h1>
+    <ul>
+        <% files.forEach(file => { %>
+            <li><%= file %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
