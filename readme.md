@@ -1,17 +1,17 @@
-# **QuickRemind – AI-Powered Auto-Reminder Generator**  
-🚀 **Never Forget Important Tasks Again – Automatically Create Reminders from Conversations!**  
+# **QuickRemind – Your ultimate Auto-Reminder Generator**  
+🚀 **Never Forget Important Tasks Again – Automatically Create Reminders from Conversations made by you using our project in your local system!**  
 
 ![QuickRemind Banner](https://via.placeholder.com/1200x500?text=QuickRemind+-+AI-Powered+Auto-Reminder+Generator)
 
 ---
 
 ## **📌 About QuickRemind**  
-QuickRemind is an **AI-powered, privacy-first reminder tool** that **automatically detects tasks and deadlines** hidden in your chats, emails, or notes and sets reminders for you—without any manual input!  
+QuickRemind is a **Manual-powered, privacy-first reminder tool** that **automatically detects tasks and deadlines** hidden in your chats, emails, or notes and sets reminders for you—with the help of any manual input given by the user by in his local system,ensuring data privacy for themself
 
-✅ **Smart AI-Powered Text Recognition** – Detects dates, times, and events from conversations.  
+✅ **Manual-Powered Text Recognition** – Detects dates, times, and events from conversations exported by the user himself by using our project.
 ✅ **Auto Reminder Creation** – Instantly creates notifications with snooze/reschedule options.  
 ✅ **Privacy-First** – Works **offline** with local AI models, no cloud storage needed.  
-✅ **Multi-Platform Support** – Supports **WhatsApp, Telegram, Emails, Notes, and SMS**.  
+✅ **Multi-Platform Support** – Supports **WhatsApp, Telegram, Emails, Notes, and SMS**.
 ✅ **Customizable Alerts** – Notifications via mobile, email, or a simple dashboard.  
 
 ---
@@ -19,39 +19,43 @@ QuickRemind is an **AI-powered, privacy-first reminder tool** that **automatical
 ## **🛠 Tech Stack**  
 
 ### **Backend**
-- 🔹 **FastAPI / Flask** – API for reminder automation.  
+- 🔹 **FastAPI / Flask** – API for task extraction and processing. 
 - 🔹 **NLP Model (Phi-2 / TinyLlama)** – Extracts tasks and deadlines from text.  
-- 🔹 **SQLite** – Lightweight database for storing reminders locally.  
+- 🔹 **Supabase** – Scalable database for storing extracted tasks.  
 
 ### **Frontend**  
-- 🎨 **React + TailwindCSS** – Simple and intuitive UI.  
-- 💻 **Electron.js / Tauri** – Cross-platform desktop app.  
+- 🎨 **React** – Simple and intuitive UI.  
+- 💻 **Drag-and-Drop ZIP Upload** – Easy data extraction from exported files.
+- 🛠 **Node.js / Express.js** – Backend integration for real-time updates.
 
-### **Integrations (Future Roadmap)**  
-- 🔗 **WhatsApp / Telegram / Email email APIs** (for auto-scanning messages).  
-- 📅 **Google Calendar, Notion, Trello Sync** (for productivity enthusiasts).  
+### **Integrations (Future Roadmap)** 
+-🔗 **GoogleAuth** – Secure login & data source configuration.
+-📅 **AI-Based Auto-Scheduling** – Smart task prioritization & scheduling.
+-🗣 **Voice Command Support** – Hands-free task management.
 
 ---
 
 ## **🚀 How It Works**  
 
-### **1️⃣ Capture Messages & Notes**  
-- Automatically scans **messages, notes, or emails** for tasks and deadlines.  
-- Works locally, ensuring **100% privacy** (no cloud storage).  
+### **1️⃣ Import Data from Multiple Sources**
 
-### **2️⃣ Extract Key Information**  
-- Uses **AI-powered NLP models** to identify reminder-worthy sentences.  
+-Drag & drop ZIP files (WhatsApp, Gmail, Notes, etc.).
+-Connect your Google Account for real-time task extraction.
+-Works offline, ensuring 100% privacy. 
+
+### **2️⃣ Extract Key Information using NLP**  
+- NLP extracts **tasks, reminders, and deadlines** from conversations given in the exported files 
 - Example:  
   - **Input:** `"Doctor appointment at 4 PM on Friday."`  
   - **Output:** 📅 **Reminder Created:** `"Doctor Appointment – Friday, 4 PM."`  
 
-### **3️⃣ Auto-Create Reminders**  
-- Stores reminders **locally** (SQLite).  
-- Sends **smart notifications** before the deadline.  
+### **3️⃣ Structured Data Storage**  
+- Extracted tasks are stored in **Supabase** for retrieval
+- JSON & CSV formats are generated for easy exports.
 
 ### **4️⃣ User Interaction**  
 - Simple UI allows users to **view, edit, snooze, or delete reminders**.  
-- Optional **speech-to-text feature** for quick reminders.  
+- Optional **speech-to-text feature** for quick reminders in upcoming days😁.
 
 ---
 
@@ -67,7 +71,7 @@ cd QuickRemind
 ```sh
 cd backend
 pip install -r requirements.txt
-python app.py
+python task.py
 ```
 
 ### **🔹 Frontend Setup**  
@@ -89,8 +93,6 @@ npm run dev
 
 ## **💰 Monetization & Future Roadmap**  
 ✅ **Open-Source Core** – Free for all users.  
-✅ **Pro Version ($5/month)** – Sync with **Google Calendar, Notion, Trello, Slack**.  
-✅ **Enterprise Edition** – Team-based reminders for workplaces.  
 
 ---
 
