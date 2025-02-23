@@ -113,7 +113,9 @@ Want to contribute? **Fork the repo, add your features, and submit a PR!**
 ---
 
 ## **📜 License**  
-🔓 MIT License – Free & Open Source  
+🔓 MIT License
+
+Copyright (c) 2025 QuickRemind
 
 ---
 
