@@ -1,7 +1,7 @@
 # **QuickRemind – Your ultimate Auto-Reminder Generator**  
 🚀 **Never Forget Important Tasks Again – Automatically Create Reminders from Conversations made by you using our project in your local system!**  
 
-![QuickRemind Banner](https://via.placeholder.com/1200x500?text=QuickRemind+-+AI-Powered+Auto-Reminder+Generator)
+![QuickRemind Banner](quickremind.png)
 
 ---
 
