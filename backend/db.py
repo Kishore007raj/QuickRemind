@@ -1,1 +1,0 @@
-#  🛢️ Supabase database integration
